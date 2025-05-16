@@ -1,21 +1,21 @@
 <template>
   <div class="home bg-gray-900 min-h-screen text-white">
-    <!-- Featured Movie Banner -->
+  
     <div class="feature-card relative max-w-7xl mx-auto overflow-hidden rounded-lg shadow-xl mt-6">
-    <router-link to="/movie/chhaava" class="block">
+    <router-link to="/movie/naruto" class="block">
         <div class="w-full h-96">
-          <img src="@/assets/images/chhaava-poster.jpg" alt="Chhaava" class="w-full h-full object-cover" />
+          <img src="../assets/images/naruto.webp" alt="naruro" class="w-full h-full object-cover" />
         </div>
         <div class="details absolute left-0 right-0 bottom-0 bg-gradient-to-t from-gray-800/80 to-transparent p-6 flex flex-col justify-end">
-          <h3 class="text-white text-3xl font-bold mb-2">Chhaava</h3>
+          <h3 class="text-white text-3xl font-bold mb-2">Naruto</h3>
           <p class="text-white max-w-2xl text-sm">
-            A gripping historical action film based on the life of Sambhaji Maharaj, portrayed by Vicky Kaushal.
+           An epic anime adventure following Naruto Uzumaki on his journey to become the strongest ninja, facing powerful enemies and uncovering the secrets of his past.
           </p>
         </div>
       </router-link>
     </div>
 
-    <!-- Search Bar -->
+    
     <form @submit.prevent="searchMovies()" class="search-box flex flex-col items-center p-6 max-w-2xl mx-auto">
       <input 
         type="text" 
@@ -40,10 +40,11 @@
         <router-link :to="'/movie/' + movie.imdbID" class="block bg-gray-800 rounded-lg overflow-hidden shadow-md transition hover:scale-105 duration-200">
           <div class="relative h-[275px]">
             <img 
-              :src="movie.Poster !== 'N/A' ? movie.Poster : 'fallback.jpg'" 
+              :src="movie.Poster !== 'N/A' ? movie.Poster : '../assets/images/images.png'" 
               alt="Movie Poster" 
               class="w-full h-full object-cover"
             />
+
             <span class="absolute bottom-2 left-2 bg-teal-600 text-white text-xs px-2 py-1 rounded shadow">
               {{ movie.Type }}
             </span>
