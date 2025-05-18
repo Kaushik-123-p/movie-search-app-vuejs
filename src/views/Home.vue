@@ -72,7 +72,7 @@ const movies = ref([])
 
 const searchMovies = () => {
   if (search.value !== "") {
-    fetch(`http://www.omdbapi.com/?apikey=${env.apikey}&s=${search.value}`)
+    fetch(`https://www.omdbapi.com/?apikey=${env.apikey}&s=${search.value}`)
       .then(res => res.json())
       .then(data => {
         movies.value = data.Search || []
